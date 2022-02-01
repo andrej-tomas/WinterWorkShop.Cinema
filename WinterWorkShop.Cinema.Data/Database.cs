@@ -14,7 +14,7 @@ namespace WinterWorkShop.Cinema.Data
         {
             new ProjectionModel { Id = 1, CinemaName = "Cineplex", ProjectionDate = DateTime.Now, MovieId  = 1},
             new ProjectionModel { Id = 2, CinemaName = "CinemaPlus", ProjectionDate = DateTime.Now, MovieId  = 1},
-            new ProjectionModel { Id = 3, CinemaName = "Cineplex", ProjectionDate = DateTime.Now, MovieName = 2}
+            new ProjectionModel { Id = 3, CinemaName = "Cineplex", ProjectionDate = DateTime.Now, MovieId = 2}
         };
     }
 }
