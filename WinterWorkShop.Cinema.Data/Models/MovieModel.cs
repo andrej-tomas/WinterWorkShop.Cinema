@@ -7,5 +7,6 @@
         public string DirectorName { get; set; }
         public double Rating { get; set; }
         public DateTime ReleaseDate { get; set; }
+        public List<ProjectionModel> Projections { get; private set; } = new List<ProjectionModel>();
     }
 }

@@ -4,9 +4,8 @@
     {
       
         public int Id { get; set; }
-
         public DateTime ProjectionDate { get; set; }
         public string CinemaName { get; set; }
-        public string MovieName { get; set; }
+        public int MovieId { get; set; }
     }
 }

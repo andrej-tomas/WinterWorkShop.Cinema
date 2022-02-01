@@ -31,7 +31,7 @@ namespace WinterWorkShop.Cinema.API.Controllers
                     Id = projection.Id,
                     ProjectionDate = DateTime.Now,
                     CinemaName = projection.CinemaName,
-                    MovieName = projection.MovieName
+                    MovieId = projection.MovieId
                 });
             }
 
@@ -58,7 +58,7 @@ namespace WinterWorkShop.Cinema.API.Controllers
                 Id = id,
                 ProjectionDate = DateTime.Now,
                 CinemaName = projection.CinemaName,
-                MovieName = projection.MovieName
+                MovieId = projection.MovieId
             };
 
             return result;
