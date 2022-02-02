@@ -7,7 +7,8 @@ namespace WinterWorkShop.Cinema.Data
         public List<MovieModel> GetAllMoviesResponses = new List<MovieModel>
         {
             new MovieModel { Id = 1, Name = "The Schindler's List" },
-            new MovieModel { Id = 2, Name = "The Ten Commandments" }
+            new MovieModel { Id = 2, Name = "The Ten Commandments" },
+            new MovieModel { Id = 3, Name = "Ben Hur" }
         };
 
         public List<ProjectionModel> GetAllProjections = new List<ProjectionModel>

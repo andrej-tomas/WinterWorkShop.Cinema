@@ -64,10 +64,32 @@ namespace WinterWorkShop.Cinema.API.Controllers
             return result;
         }
 
-        [HttpGet("/movie/{id}")]
-        public List<ProjectionResponse> GetProjectionsByMovieId(int id)
+        [HttpGet("movie/{movieId}")]
+        public ActionResult<List<ProjectionResponse>> GetProjectionsByMovieId(int movieId)
         {
-            var projections = _projectionRepository.GetProjectionsByMovieId(id);
+            var projections = _projectionRepository.GetProjectionsByMovieId(movieId);
+
+            if (projections == null)
+            {
+                ErrorResponseModel errorModel = new ErrorResponseModel()
+                {
+                    ErrorMessage = Messages.MOVIE_DOES_NOT_EXIST,
+                    StatusCode = System.Net.HttpStatusCode.NotFound
+                };
+
+                return NotFound(errorModel);
+            }
+
+            if (!projections.Any())
+            {
+                ErrorResponseModel errorModel = new ErrorResponseModel()
+                {
+                    ErrorMessage = Messages.PROJECTIONS_DO_NOT_EXIST,
+                    StatusCode = System.Net.HttpStatusCode.NotFound
+                };
+
+                return NotFound(errorModel);
+            }
 
             var result = new List<ProjectionResponse>();
 

@@ -19,11 +19,13 @@ namespace WinterWorkShop.Cinema.Data.Repositories
             return projection;
         }
 
-        public List<ProjectionModel> GetProjectionsByMovieId(int id)
-        { 
-            var projections = Database.GetAllProjections.Where(p => p.MovieId == id).ToList();
+        public List<ProjectionModel>? GetProjectionsByMovieId(int id)
+        {
+            var movie = Database.GetAllMoviesResponses.Any(m => m.Id == id);
 
-            return projections;
+            return movie ?
+                Database.GetAllProjections.Where(p => p.MovieId == id).ToList()
+                : null;
         }
 
     }
