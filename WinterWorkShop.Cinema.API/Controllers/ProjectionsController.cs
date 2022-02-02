@@ -47,7 +47,7 @@ namespace WinterWorkShop.Cinema.API.Controllers
             {
                 ErrorResponseModel errorResponse = new ErrorResponseModel()
                 {
-                    ErrorMessage = Messages.MOVIE_DOES_NOT_EXIST,
+                    ErrorMessage = Messages.PROJECTION_DOES_NOT_EXIST,
                     StatusCode = System.Net.HttpStatusCode.NotFound
                 };
                 return NotFound(errorResponse);
